@@ -33,5 +33,6 @@ public class Camera_Control : MonoBehaviour {
             float rotationY = transform.localEulerAngles.y;
             transform.localEulerAngles = new Vector3(_rotationX, rotationY, 0);
         }
+
 	}
 }

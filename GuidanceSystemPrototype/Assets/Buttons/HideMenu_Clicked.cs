@@ -6,7 +6,7 @@ public class HideMenu_Clicked : MonoBehaviour {
 
     private bool hidden = false;
 
-    // Update is called once per frame
+  
     public void Clicked()
     {
         if (hidden)

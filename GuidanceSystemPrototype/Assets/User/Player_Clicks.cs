@@ -29,6 +29,8 @@ public class Player_Clicks : MonoBehaviour {
 
                 Button_Clicked target = hitObject.GetComponent<Button_Clicked>();
                 HideMenu_Clicked hide = hitObject.GetComponent<HideMenu_Clicked>();
+                GuidanceButton_Clicked guide = hitObject.GetComponent<GuidanceButton_Clicked>();
+
                 if (target != null)
                 {
                     target.Clicked();
@@ -36,6 +38,10 @@ public class Player_Clicks : MonoBehaviour {
                     if (hide != null)
                     {
                         hide.Clicked();
+                    }
+                    else if (guide != null)
+                    {
+                        guide.Clicked();
                     }
                 }
                 else {StartCoroutine(ShotGen(hit.point));}
