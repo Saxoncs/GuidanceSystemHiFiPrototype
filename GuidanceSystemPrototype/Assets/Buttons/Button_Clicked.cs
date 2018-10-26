@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class Button_Clicked : MonoBehaviour {
 
+
+    private void Start()
+    {
+        GetComponent<Renderer>().material.shader = Shader.Find("Diffuse");
+    }
+
     public void Clicked()
     {
         StartCoroutine (React());
+    }
+
+    public void Hovered()
+    {
+        StartCoroutine(MouseOver());
     }
 
     private IEnumerator React()
@@ -24,5 +35,17 @@ public class Button_Clicked : MonoBehaviour {
         yield return new WaitForSeconds(0.1f);
 
         transform.localScale = basesize;
+    }
+
+    private IEnumerator MouseOver()
+    {
+
+        Debug.Log("cursor is hovering over an object");
+
+        GetComponent<Renderer>().material.shader = Shader.Find("Standard");
+
+        yield return new WaitForSeconds(0.5f);
+
+        GetComponent<Renderer>().material.shader = Shader.Find("Diffuse");
     }
 }

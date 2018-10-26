@@ -28,13 +28,36 @@ public class Player_Clicks : MonoBehaviour {
                 //objects will need scripts in response to being hit.
 
                 Button_Clicked target = hitObject.GetComponent<Button_Clicked>();
-
+                HideMenu_Clicked hide = hitObject.GetComponent<HideMenu_Clicked>();
                 if (target != null)
                 {
                     target.Clicked();
+
+                    if (hide != null)
+                    {
+                        hide.Clicked();
+                    }
                 }
                 else {StartCoroutine(ShotGen(hit.point));}
                 
+            }
+        }
+        else
+        {
+            Vector3 point = new Vector3(playerCam.pixelWidth / 2, playerCam.pixelHeight / 2, 0);
+            Ray ray = playerCam.ScreenPointToRay(point);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                GameObject hitObject = hit.transform.gameObject;
+                //objects will need scripts in response to being hit.
+
+                Button_Clicked target = hitObject.GetComponent<Button_Clicked>();
+
+                if (target != null)
+                {
+                    target.Hovered();
+                }
             }
         }
 	}
