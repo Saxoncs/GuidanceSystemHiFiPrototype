@@ -7,7 +7,7 @@ public class Button_Clicked : MonoBehaviour {
 
     private void Start()
     {
-        GetComponent<Renderer>().material.shader = Shader.Find("Diffuse");
+        //GetComponent<Renderer>().material.shader = Shader.Find("Diffuse");
     }
 
     public void Clicked()

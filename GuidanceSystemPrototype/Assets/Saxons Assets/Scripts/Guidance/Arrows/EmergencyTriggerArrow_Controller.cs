@@ -15,5 +15,8 @@ public class EmergencyTriggerArrow_Controller : MonoBehaviour {
             arrows.ActivateGuidance();
         }
 
+        GameObject pillar = GameObject.Find("LightBeam");
+        Pillar_Controller pillars = pillar.GetComponent<Pillar_Controller>();
+        pillars.EmergencyPillar();
     }
 }
