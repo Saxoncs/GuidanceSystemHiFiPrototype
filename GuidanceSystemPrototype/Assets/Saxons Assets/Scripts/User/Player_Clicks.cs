@@ -30,6 +30,7 @@ public class Player_Clicks : MonoBehaviour {
                 Button_Clicked target = hitObject.GetComponent<Button_Clicked>();
                 HideMenu_Clicked hide = hitObject.GetComponent<HideMenu_Clicked>();
                 GuidanceButton_Clicked guide = hitObject.GetComponent<GuidanceButton_Clicked>();
+                EmergencyButton_Clicked emergency = hitObject.GetComponent<EmergencyButton_Clicked>();
 
                 if (target != null)
                 {
@@ -43,29 +44,33 @@ public class Player_Clicks : MonoBehaviour {
                     {
                         guide.Clicked();
                     }
+                    else if (emergency != null)
+                    { 
+                        emergency.Clicked();
+                    }
                 }
                 else {StartCoroutine(ShotGen(hit.point));}
                 
             }
         }
-        else
-        {
-            Vector3 point = new Vector3(playerCam.pixelWidth / 2, playerCam.pixelHeight / 2, 0);
-            Ray ray = playerCam.ScreenPointToRay(point);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
-                GameObject hitObject = hit.transform.gameObject;
-                //objects will need scripts in response to being hit.
+        //else
+        //{
+        //    Vector3 point = new Vector3(playerCam.pixelWidth / 2, playerCam.pixelHeight / 2, 0);
+        //    Ray ray = playerCam.ScreenPointToRay(point);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit))
+        //    {
+        //        GameObject hitObject = hit.transform.gameObject;
+        //        //objects will need scripts in response to being hit.
 
-                Button_Clicked target = hitObject.GetComponent<Button_Clicked>();
+        //        Button_Clicked target = hitObject.GetComponent<Button_Clicked>();
 
-                if (target != null)
-                {
-                    target.Hovered();
-                }
-            }
-        }
+        //        if (target != null)
+        //        {
+        //            target.Hovered();
+        //        }
+        //    }
+        //}
 	}
 
     private IEnumerator ShotGen(Vector3 pos)

@@ -8,7 +8,7 @@ public class Arrow_Control : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log("collision detected with:" + other.ToString());
+        //Debug.Log("collision detected with:" + other.ToString());
 
 
         GameObject child1 = this.gameObject.transform.GetChild(0).gameObject;
@@ -21,6 +21,8 @@ public class Arrow_Control : MonoBehaviour {
 
     public void ActivateGuidance()
     {
+        //Debug.Log("you need some guidance?");
+
         GameObject child1 = this.gameObject.transform.GetChild(0).gameObject;
         GameObject child2 = this.gameObject.transform.GetChild(1).gameObject;
         GameObject child3 = this.gameObject.transform.GetChild(2).gameObject;
