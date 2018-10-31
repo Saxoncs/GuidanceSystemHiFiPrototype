@@ -5,13 +5,6 @@ using UnityEngine;
 public class Arrow_Control : MonoBehaviour {
    
    
-
-
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     void OnTriggerEnter(Collider other)
     {
 
