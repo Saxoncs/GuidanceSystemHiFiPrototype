@@ -20,7 +20,7 @@ public void Clicked()
         bluebeam.GuidancePillar();
 
         Destroy(gameObject);
-        Destroy(GameObject.Find("book2"));
+        Destroy(GameObject.Find("book2(Clone)"));
     }
 
 }

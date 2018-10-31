@@ -31,6 +31,7 @@ public class Player_Clicks : MonoBehaviour {
                 HideMenu_Clicked hide = hitObject.GetComponent<HideMenu_Clicked>();
                 GuidanceButton_Clicked guide = hitObject.GetComponent<GuidanceButton_Clicked>();
                 EmergencyButton_Clicked emergency = hitObject.GetComponent<EmergencyButton_Clicked>();
+                PopularBooksButton_Clicked books = hitObject.GetComponent<PopularBooksButton_Clicked>();
 
                 if (target != null)
                 {
@@ -47,6 +48,10 @@ public class Player_Clicks : MonoBehaviour {
                     else if (emergency != null)
                     { 
                         emergency.Clicked();
+                    }
+                    else if (books != null)
+                    {
+                        books.Clicked();
                     }
                 }
                 else {StartCoroutine(ShotGen(hit.point));}

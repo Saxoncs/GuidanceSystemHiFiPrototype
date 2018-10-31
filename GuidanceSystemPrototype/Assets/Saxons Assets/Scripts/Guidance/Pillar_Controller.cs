@@ -15,5 +15,10 @@ public class Pillar_Controller : MonoBehaviour {
             GameObject redpill = this.gameObject.transform.GetChild(1).gameObject;
             redpill.GetComponent<Renderer>().enabled = true;
     }
+    public void DisableGuidance()
+    {
+        GameObject bluepill = this.gameObject.transform.GetChild(0).gameObject;
+        bluepill.GetComponent<Renderer>().enabled = false;
+    }
 
 }

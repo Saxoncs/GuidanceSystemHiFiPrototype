@@ -22,7 +22,11 @@ public class EmergencyButton_Clicked : MonoBehaviour {
         Arrow_Control triggerarrows = triggerarrow.GetComponent<Arrow_Control>();
         triggerarrows.ActivateGuidance();
 
+        GameObject beam = GameObject.Find("EmergencyLightBeam");
+        Pillar_Controller bluebeam = beam.GetComponent<Pillar_Controller>();
+        bluebeam.GuidancePillar();
+
         Destroy(gameObject);
-        Destroy(GameObject.Find("book1"));
+        Destroy(GameObject.Find("book1(Clone)"));
     }
 }
