@@ -21,5 +21,8 @@ public class EmergencyButton_Clicked : MonoBehaviour {
         GameObject triggerarrow = GameObject.Find("EmergencyTriggerArrow");
         Arrow_Control triggerarrows = triggerarrow.GetComponent<Arrow_Control>();
         triggerarrows.ActivateGuidance();
+
+        Destroy(gameObject);
+        Destroy(GameObject.Find("book1"));
     }
 }

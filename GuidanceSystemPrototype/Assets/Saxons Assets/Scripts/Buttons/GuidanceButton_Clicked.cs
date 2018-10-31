@@ -18,5 +18,9 @@ public void Clicked()
         GameObject beam = GameObject.Find("LightBeam");
         Pillar_Controller bluebeam = beam.GetComponent<Pillar_Controller>();
         bluebeam.GuidancePillar();
+
+        Destroy(gameObject);
+        Destroy(GameObject.Find("book2"));
     }
+
 }
