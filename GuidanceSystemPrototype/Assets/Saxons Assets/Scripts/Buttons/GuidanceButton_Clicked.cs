@@ -12,6 +12,15 @@ public void Clicked()
             GameObject arrow = GameObject.Find("Arrow" + i);
             Arrow_Control arrows = arrow.GetComponent<Arrow_Control>();
             arrows.ActivateGuidance();
+
+
         }
+        GameObject beam = GameObject.Find("LightBeam");
+        Pillar_Controller bluebeam = beam.GetComponent<Pillar_Controller>();
+        bluebeam.GuidancePillar();
+
+        Destroy(gameObject);
+        Destroy(GameObject.Find("book2(Clone)"));
     }
+
 }

@@ -7,7 +7,7 @@ public class Button_Clicked : MonoBehaviour {
 
     private void Start()
     {
-        GetComponent<Renderer>().material.shader = Shader.Find("Diffuse");
+        //GetComponent<Renderer>().material.shader = Shader.Find("Diffuse");
     }
 
     public void Clicked()
@@ -15,10 +15,10 @@ public class Button_Clicked : MonoBehaviour {
         StartCoroutine (React());
     }
 
-    public void Hovered()
-    {
-        StartCoroutine(MouseOver());
-    }
+    //public void Hovered()
+    //{
+    //    StartCoroutine(MouseOver());
+    //}
 
     private IEnumerator React()
     {
@@ -37,15 +37,15 @@ public class Button_Clicked : MonoBehaviour {
         transform.localScale = basesize;
     }
 
-    private IEnumerator MouseOver()
-    {
+    //private IEnumerator MouseOver()
+    //{
 
-        Debug.Log("cursor is hovering over an object");
+    //    Debug.Log("cursor is hovering over an object");
 
-        GetComponent<Renderer>().material.shader = Shader.Find("Standard");
+    //    GetComponent<Renderer>().material.shader = Shader.Find("Standard");
 
-        yield return new WaitForSeconds(0.5f);
+    //    yield return new WaitForSeconds(0.5f);
 
-        GetComponent<Renderer>().material.shader = Shader.Find("Diffuse");
-    }
+    //    GetComponent<Renderer>().material.shader = Shader.Find("Diffuse");
+    //}
 }
